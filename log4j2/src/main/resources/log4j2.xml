@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR">
+    <Appenders>
+        <Console name="stdout" target="SYSTEM_OUT">
+            <PatternLayout pattern="%l split %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="stdout" />
+        </Root>
+
+        <Logger name="ABC" level="DEBUG" additivity="TRUE">
+            <AppenderRef ref="stdout" />
+        </Logger>
+    </Loggers>
+</Configuration>
