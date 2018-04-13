@@ -22,6 +22,9 @@ public class HelloClient {
             e.printStackTrace();
         } catch (MalformedURLException e) {
             e.printStackTrace();
+
+
+
         } catch (RemoteException e) {
             e.printStackTrace();
         }

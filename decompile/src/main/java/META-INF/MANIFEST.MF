@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: cfr_0_125.jar
+Main-Class: com.ljd.decompile.Decompile
+

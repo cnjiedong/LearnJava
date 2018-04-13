@@ -5,8 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/LearnJava.iml" filepath="$PROJECT_DIR$/LearnJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/RmiClient/RmiClient.iml" filepath="$PROJECT_DIR$/RmiClient/RmiClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/RmiServer/RmiServer.iml" filepath="$PROJECT_DIR$/RmiServer/RmiServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/decompile/decompile.iml" filepath="$PROJECT_DIR$/decompile/decompile.iml" />
       <module fileurl="file://$PROJECT_DIR$/junit/junit.iml" filepath="$PROJECT_DIR$/junit/junit.iml" />
       <module fileurl="file://$PROJECT_DIR$/log4j2/log4j2.iml" filepath="$PROJECT_DIR$/log4j2/log4j2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serializable/serializable.iml" filepath="$PROJECT_DIR$/serializable/serializable.iml" />
       <module fileurl="file://$PROJECT_DIR$/springannotation/springannotation.iml" filepath="$PROJECT_DIR$/springannotation/springannotation.iml" />
     </modules>
   </component>
