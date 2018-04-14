@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LearnJava.iml" filepath="$PROJECT_DIR$/LearnJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RmiApi/RmiApi.iml" filepath="$PROJECT_DIR$/RmiApi/RmiApi.iml" />
       <module fileurl="file://$PROJECT_DIR$/RmiClient/RmiClient.iml" filepath="$PROJECT_DIR$/RmiClient/RmiClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/RmiServer/RmiServer.iml" filepath="$PROJECT_DIR$/RmiServer/RmiServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/decompile/decompile.iml" filepath="$PROJECT_DIR$/decompile/decompile.iml" />

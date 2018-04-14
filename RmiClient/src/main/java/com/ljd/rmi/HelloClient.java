@@ -15,17 +15,21 @@ public class HelloClient {
     public static void main(String args[]) {
         try {
             //在RMI服务注册表中查找名称为RHello的对象，并调用其上的方法
-            IHello rhello = (IHello) Naming.lookup("rmi://192.168.111.23:8888/RHello");
-            System.out.println(rhello.helloWorld());
-            System.out.println(rhello.sayHelloToSomeBody("熔岩"));
+            //IHello rhello = (IHello) Naming.lookup("rmi://192.168.111.23:8888/RHello");
+            IHello rhello = (IHello) Naming.lookup("rmi://localhost:8888/RHello");
+            while(true) {
+                System.out.println(rhello.helloWorld());
+                StringBuilder name = new StringBuilder("熔岩");
+                System.out.println(rhello.sayHelloToSomeBody(name));
+                Thread.sleep(2000);
+            }
         } catch (NotBoundException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {
             e.printStackTrace();
-
-
-
         } catch (RemoteException e) {
+            e.printStackTrace();
+        }catch (Exception e){
             e.printStackTrace();
         }
     }

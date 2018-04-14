@@ -11,5 +11,11 @@
 
     <artifactId>RmiClient</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.ljd.learnjava</groupId>
+            <artifactId>RmiApi</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
