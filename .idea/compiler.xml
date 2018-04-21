@@ -6,9 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="decompile" />
         <module name="junit" />
         <module name="log4j2" />
+        <module name="mysql" />
         <module name="RmiApi" />
         <module name="RmiClient" />
         <module name="RmiServer" />
@@ -23,6 +23,7 @@
       <module name="junit" target="1.5" />
       <module name="LearnJava" target="1.5" />
       <module name="log4j2" target="1.5" />
+      <module name="mysql" target="1.5" />
       <module name="RmiApi" target="1.5" />
       <module name="RmiClient" target="1.5" />
       <module name="RmiServer" target="1.5" />
