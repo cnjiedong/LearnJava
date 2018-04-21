@@ -85,6 +85,8 @@ public class CreateTableEntity {
             rs.close();
             System.out.println(code);
             FileOutputStream fout = new FileOutputStream(new File("d:/" + table + ".java"));
+            fout.write(code.toString().getBytes());
+            fout.close();
         }
         stmt.close();
         conn.close();
@@ -138,7 +140,18 @@ public class CreateTableEntity {
              }
              newName.append(s);
          }
-         return newName.toString();
+         String sName = newName.toString();
+         if(sName.endsWith("id")){
+             sName = sName.substring(0,sName.length()-2) + "Id";
+         }
+        if(sName.endsWith("type")){
+            sName = sName.substring(0,sName.length()-"type".length()) + "Type";
+        }
+
+        if(sName.endsWith("weight")){
+            sName = sName.substring(0,sName.length()-"weight".length()) + "Weight";
+        }
+         return sName;
     }
 
     public static String parse(String all) {
