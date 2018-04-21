@@ -115,10 +115,15 @@ public class CreateTableEntity {
             return "Double";
         }
         if(type.startsWith("tinyint")){
-            return "int";
+            return "Integer";
         }
         if(type.startsWith("int")){
-            return "int";
+            String sLengh = type.replace("int","").replace("(","").replace(")","");
+            int length = Integer.valueOf(sLengh);
+            if(length>10){
+                return "Long";
+            }
+            return "Integer";
         }
         return "unknownType";
     }
