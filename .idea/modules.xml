@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/RmiApi/RmiApi.iml" filepath="$PROJECT_DIR$/RmiApi/RmiApi.iml" />
       <module fileurl="file://$PROJECT_DIR$/RmiClient/RmiClient.iml" filepath="$PROJECT_DIR$/RmiClient/RmiClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/RmiServer/RmiServer.iml" filepath="$PROJECT_DIR$/RmiServer/RmiServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/datastructure/datastructure.iml" filepath="$PROJECT_DIR$/datastructure/datastructure.iml" />
       <module fileurl="file://$PROJECT_DIR$/decompile/decompile.iml" filepath="$PROJECT_DIR$/decompile/decompile.iml" />
       <module fileurl="file://$PROJECT_DIR$/junit/junit.iml" filepath="$PROJECT_DIR$/junit/junit.iml" />
       <module fileurl="file://$PROJECT_DIR$/log4j2/log4j2.iml" filepath="$PROJECT_DIR$/log4j2/log4j2.iml" />

@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="datastructure" />
         <module name="junit" />
         <module name="log4j2" />
         <module name="mysql" />
@@ -16,10 +17,9 @@
         <module name="springannotation" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
+      <module name="datastructure" target="1.5" />
       <module name="decompile" target="1.5" />
-      <module name="fernflower-master_main" target="1.8" />
-      <module name="fernflower-master_test" target="1.8" />
       <module name="junit" target="1.5" />
       <module name="LearnJava" target="1.5" />
       <module name="log4j2" target="1.5" />
