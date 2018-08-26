@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="cfr_0_125">
+  <library name="cfr_0_132">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../decompile/cfr_0_125.jar!/" />
+      <root url="jar://$USER_HOME$/thirtpartylibs/cfr_0_132.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

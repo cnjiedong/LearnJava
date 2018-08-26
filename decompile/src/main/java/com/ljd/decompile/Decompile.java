@@ -73,10 +73,10 @@ public class Decompile {
         }
         String[] fileList = dirFile.list();
         for(String filename : fileList){
-            String fullFilename = sourcePath + "\\" + filename;
+            String fullFilename = sourcePath + "/" + filename;
             File file = new File(fullFilename);
             if(file.isDirectory()){
-                String output = outputPath + "\\" + filename;
+                String output = outputPath + "/" + filename;
                 executeDir(fullFilename, output);
                 continue;
             }

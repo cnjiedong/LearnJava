@@ -74,9 +74,9 @@ public class ObjectGenerater {
                 String comment = rs.getString("Comment");
                 String type = rs.getString("Type");
                 System.out.println(fieldName + "\t:\t" + comment);
-                if(skipFields(fieldName,false)){
-                    continue;
-                }
+                //if(skipFields(fieldName,false)){
+                //    continue;
+               // }
                 eoAttr.append("    /**").append(comment).append("*/\n");
                 eoAttr.append("    ").append("@Column(name = \"").append(fieldName).append("\")\n");
                 eoAttr.append("    ").append(convertFiledType(type)).append("  ").append(convertName(fieldName)).append(";\n");
@@ -90,19 +90,19 @@ public class ObjectGenerater {
             }
             rs.close();
             System.out.println(eoAttr);
-            FileOutputStream fEoOut = new FileOutputStream(new File("d:/" + table + "Eo.java"));
+            FileOutputStream fEoOut = new FileOutputStream(new File("/Users/jiedong/智能繁殖/" + table + "Eo.java"));
             fEoOut.write(getClassHead(table, true).getBytes());
             fEoOut.write(eoAttr.toString().getBytes());
             fEoOut.write(eoGetSet.toString().getBytes());
             fEoOut.write("\n}".getBytes());
             fEoOut.close();
 
-            FileOutputStream fDtoOut = new FileOutputStream(new File("d:/" + table + "Dto.java"));
+            /*FileOutputStream fDtoOut = new FileOutputStream(new File("/Users/jiedong/智能繁殖/" + table + "Dto.java"));
             fDtoOut.write(getClassHead(table, false).getBytes());
             fDtoOut.write(dtoAttr.toString().getBytes());
             fDtoOut.write(dtoGetSet.toString().getBytes());
             fDtoOut.write("\n}".getBytes());
-            fDtoOut.close();
+            fDtoOut.close();*/
 
 
         }
@@ -183,13 +183,16 @@ import javax.persistence.Table;*/
     }
 
     public static String convertFiledType(String type, boolean dto ){
-        if(type.startsWith("varchar")){
+        if(type.startsWith("varchar") || type.startsWith("mediumtext")){
             return "String";
         }
         if(type.startsWith("bigint")){
             return "Long";
         }
         if(type.startsWith("datetime")){
+            return  dto?"String":"Date";
+        }
+        if(type.startsWith("date")){
             return  dto?"String":"Date";
         }
         if(type.startsWith("decimal")){

@@ -4,7 +4,6 @@
     <root id="root">
       <element id="archive" name="decompile.jar">
         <element id="module-output" name="decompile" />
-        <element id="library" level="project" name="cfr_0_125" />
       </element>
       <element id="library" level="project" name="cfr_0_125" />
     </root>

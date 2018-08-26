@@ -6,13 +6,15 @@
       <module fileurl="file://$PROJECT_DIR$/RmiApi/RmiApi.iml" filepath="$PROJECT_DIR$/RmiApi/RmiApi.iml" />
       <module fileurl="file://$PROJECT_DIR$/RmiClient/RmiClient.iml" filepath="$PROJECT_DIR$/RmiClient/RmiClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/RmiServer/RmiServer.iml" filepath="$PROJECT_DIR$/RmiServer/RmiServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/classloader/classloader.iml" filepath="$PROJECT_DIR$/classloader/classloader.iml" />
       <module fileurl="file://$PROJECT_DIR$/datastructure/datastructure.iml" filepath="$PROJECT_DIR$/datastructure/datastructure.iml" />
       <module fileurl="file://$PROJECT_DIR$/decompile/decompile.iml" filepath="$PROJECT_DIR$/decompile/decompile.iml" />
       <module fileurl="file://$PROJECT_DIR$/junit/junit.iml" filepath="$PROJECT_DIR$/junit/junit.iml" />
       <module fileurl="file://$PROJECT_DIR$/log4j2/log4j2.iml" filepath="$PROJECT_DIR$/log4j2/log4j2.iml" />
       <module fileurl="file://$PROJECT_DIR$/mysql/mysql.iml" filepath="$PROJECT_DIR$/mysql/mysql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/regex/regex.iml" filepath="$PROJECT_DIR$/regex/regex.iml" />
       <module fileurl="file://$PROJECT_DIR$/serializable/serializable.iml" filepath="$PROJECT_DIR$/serializable/serializable.iml" />
-      <module fileurl="file://$PROJECT_DIR$/springannotation/springannotation.iml" filepath="$PROJECT_DIR$/springannotation/springannotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stream/stream.iml" filepath="$PROJECT_DIR$/stream/stream.iml" />
     </modules>
   </component>
 </project>
