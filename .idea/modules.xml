@@ -11,7 +11,9 @@
       <module fileurl="file://$PROJECT_DIR$/decompile/decompile.iml" filepath="$PROJECT_DIR$/decompile/decompile.iml" />
       <module fileurl="file://$PROJECT_DIR$/junit/junit.iml" filepath="$PROJECT_DIR$/junit/junit.iml" />
       <module fileurl="file://$PROJECT_DIR$/log4j2/log4j2.iml" filepath="$PROJECT_DIR$/log4j2/log4j2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/memoryleak/memoryleak.iml" filepath="$PROJECT_DIR$/memoryleak/memoryleak.iml" />
       <module fileurl="file://$PROJECT_DIR$/mysql/mysql.iml" filepath="$PROJECT_DIR$/mysql/mysql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/reflect/reflect.iml" filepath="$PROJECT_DIR$/reflect/reflect.iml" />
       <module fileurl="file://$PROJECT_DIR$/regex/regex.iml" filepath="$PROJECT_DIR$/regex/regex.iml" />
       <module fileurl="file://$PROJECT_DIR$/serializable/serializable.iml" filepath="$PROJECT_DIR$/serializable/serializable.iml" />
       <module fileurl="file://$PROJECT_DIR$/stream/stream.iml" filepath="$PROJECT_DIR$/stream/stream.iml" />

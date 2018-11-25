@@ -111,9 +111,17 @@ public class Decompile {
 
     void runCompile(String jar, String outputPath) {
         //String[] argv = new String[]{"d:\\workspace\\decompile",jar, "--outputdir" , outputPath};
-        String[] argv = new String[]{jar, "--outputdir" , outputPath};
-
-        Main.main(argv);
+        String[] argv = new String[]{jar, "--outputdir" , outputPath,"--caseinsensitivefs","true"};
+        try {
+            Runtime.getRuntime().exec("clear");
+            System.out.println("decompile jar: " + jar);
+            if(jar.endsWith("scala-library-2.12.6.jar")){
+                System.out.println("decompile jar: " + jar);
+            }
+            Main.main(argv);
+        }catch (Exception e){
+            System.out.println("decomile jar:" + jar + ";errmsg = " + e.getMessage());
+        }
     }
 
     public int getJarCount() {

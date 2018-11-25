@@ -13,6 +13,8 @@
         <module>RmiServer</module>
         <module>serializable</module>
         <module>regex</module>
+        <module>memoryleak</module>
+        <module>reflect</module>
     </modules>
 
 

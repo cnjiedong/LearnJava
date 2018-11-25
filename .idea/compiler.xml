@@ -10,7 +10,9 @@
         <module name="datastructure" />
         <module name="junit" />
         <module name="log4j2" />
+        <module name="memoryleak" />
         <module name="mysql" />
+        <module name="reflect" />
         <module name="regex" />
         <module name="RmiApi" />
         <module name="RmiClient" />
@@ -25,13 +27,14 @@
       <module name="junit" target="1.5" />
       <module name="LearnJava" target="1.5" />
       <module name="log4j2" target="1.5" />
+      <module name="memoryleak" target="1.5" />
       <module name="mysql" target="1.5" />
+      <module name="reflect" target="1.5" />
       <module name="regex" target="1.5" />
       <module name="RmiApi" target="1.5" />
       <module name="RmiClient" target="1.5" />
       <module name="RmiServer" target="1.5" />
       <module name="serializable" target="1.5" />
-      <module name="springannotation" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
