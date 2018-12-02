@@ -1,4 +1,5 @@
 package com.ljd.test;
+/*
 
 import com.ljd.entity.Car;
 import org.apache.logging.log4j.LogManager;
@@ -20,3 +21,4 @@ public class TestLog4j2 {
         car.run();
     }
 }
+*/
