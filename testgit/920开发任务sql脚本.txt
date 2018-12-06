@@ -1,0 +1,142 @@
+CREATE TABLE `bc_center_task_node_female_check` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `tenant_id` bigint(20) DEFAULT NULL COMMENT '租户ID',
+  `dr` tinyint(4) NOT NULL DEFAULT '0' COMMENT '删除标识',
+  `create_person` varchar(50) NOT NULL DEFAULT '' COMMENT '创建人',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_person` varchar(50) NOT NULL DEFAULT '' COMMENT '更新人',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `master_org_id` bigint(20) DEFAULT NULL COMMENT '主组织ID',
+  `farm_id` bigint(20) DEFAULT NULL COMMENT '猪场ID',
+  `task_center_id` varchar(50) NOT NULL DEFAULT '' COMMENT '任务中心唯一ID',
+  `node_id` bigint(20) DEFAULT NULL COMMENT '节点ID',
+  `event_id` bigint(20) DEFAULT NULL COMMENT '事件ID',
+  `herd_id` bigint(20) DEFAULT NULL COMMENT '档案ID',
+  `location_id` varchar(20) DEFAULT NULL COMMENT '位置ID',
+  `fnumber` varchar(50) DEFAULT NULL COMMENT '编码',
+  `result` varchar(20) DEFAULT NULL COMMENT '孕检结果',
+  `is_execute` tinyint(1) DEFAULT '0' COMMENT '是否执行（0：未执行，1：已执行）', 
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1186284139822805001 DEFAULT CHARSET=utf8mb4 COMMENT='任务节点孕检表';
+
+
+CREATE TABLE `bc_center_task_node_transloc` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `tenant_id` bigint(20) DEFAULT NULL COMMENT '租户ID',
+  `dr` tinyint(4) NOT NULL DEFAULT '0' COMMENT '删除标识',
+  `create_person` varchar(50) NOT NULL DEFAULT '' COMMENT '创建人',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_person` varchar(50) NOT NULL DEFAULT '' COMMENT '更新人',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `master_org_id` bigint(20) DEFAULT NULL COMMENT '主组织ID',
+  `farm_id` bigint(20) DEFAULT NULL COMMENT '猪场ID',
+  `task_center_id` varchar(50) NOT NULL DEFAULT '' COMMENT '任务中心唯一ID',
+  `node_id` bigint(20) DEFAULT NULL COMMENT '节点ID',
+  `event_id` bigint(20) DEFAULT NULL COMMENT '事件ID',
+  `herd_id` bigint(20) DEFAULT NULL COMMENT '档案ID',
+  `fnumber` varchar(50) DEFAULT NULL COMMENT '编码',
+  `location_id` varchar(20) DEFAULT NULL COMMENT '位置ID',
+  `is_execute` tinyint(1) DEFAULT '0' COMMENT '是否执行（0：未执行，1：已执行）',
+  `is_out_pen` tinyint(1) DEFAULT '0' COMMENT '离栏状态（0：未离栏，1:已离栏）',
+  `is_into_pen` tinyint(1) DEFAULT '0' COMMENT '进栏状态（0：未进栏，1:已进栏）',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1186284139822805001 DEFAULT CHARSET=utf8mb4 COMMENT='任务节点转栏表';
+
+  delete from bc_center_task_type where task_type in ('TRANSLOC','FEMALE_CHECK');
+INSERT INTO `bc_center_task_type`( `task_type`, `task_name`, `project_id`, `is_created`, `tenant_id`, `master_org_id`, `dr`, `create_time`, `create_person`, `update_time`, `update_person`) 
+VALUES ('TRANSLOC', '转栏', '5b9a405e358cf094cac79a7c', 0, 1, 0, 0, now(), 'ljd', now(), 'ljd');
+INSERT INTO `bc_center_task_type`( `task_type`, `task_name`, `project_id`, `is_created`, `tenant_id`, `master_org_id`, `dr`, `create_time`, `create_person`, `update_time`, `update_person`) 
+VALUES ('FEMALE_CHECK', '妊检', '5b9a40f9358cf094cac79a7d', 0, 1, 0, 0, now(), 'ljd', now(), 'ljd');
+
+INSERT INTO `bc_center_task_role`( `tenant_id`, `dr`, `create_person`, `create_time`, `update_person`, `update_time`, `master_org_id`, `farm_id`, `task_type`, `role_name`, `role`) 
+VALUES ( 3, 0, '', now(), '', now(), 0, 0, 'TRANSLOC', '生产管理员', 'RPMSTAFF');
+
+INSERT INTO `bc_center_task_role`( `tenant_id`, `dr`, `create_person`, `create_time`, `update_person`, `update_time`, `master_org_id`, `farm_id`, `task_type`, `role_name`, `role`) 
+VALUES ( 3, 0, '', now(), '', now(), 0, 0, 'FEMALE_CHECK', '生产管理员', 'RPMSTAFF');
+
+
+
+INSERT INTO `bc_center_task_role`( `tenant_id`, `dr`, `create_person`, `create_time`, `update_person`, `update_time`, `master_org_id`, `farm_id`, `task_type`, `role_name`, `role`) 
+VALUES ( 3, 0, '', now(), '', now(), 0, 0, 'TRANSLOC', '饲养员', 'RFSTAFF');
+
+--修改任务角色表的任务类型字段长度
+ alter table bc_center_task_role modify task_type varchar(30) DEFAULT NULL COMMENT '任务类型';
+
+
+--922开发任务
+  alter table bc_center_task_node_mating add   `semen_id` bigint(20) DEFAULT NULL COMMENT '猪精ID';
+  alter table bc_center_task_node_mating add   `semen_code` varchar(32) DEFAULT NULL COMMENT '精液编码';
+  alter table bc_center_task_node_mating add  `servtech_id` bigint(20) DEFAULT NULL COMMENT '技术人员id';
+  alter table bc_center_task_node_mating add   `plan_start_time` datetime DEFAULT NULL COMMENT '计划开始执行时间';
+  alter table bc_center_task_node_mating add  `real_start_time` datetime DEFAULT NULL COMMENT '实际开始执行时间';
+  alter table bc_center_task_node_mating add  `location_id` bigint(20) DEFAULT NULL COMMENT '位置ID';
+
+--任务节点表增加status状态
+  alter table bc_center_task_node add `status` varchar(10)  DEFAULT '' COMMENT '节点状态';
+
+  --情期表，增加技术人员字段的长度
+    alter table bc_herd_services modify   `servtech` bigint(20) NOT NULL DEFAULT '0' COMMENT '技术员';
+  alter table bc_herd_services modify   `servtech1` bigint(20) NOT NULL DEFAULT '0' COMMENT '技术员1';
+  alter table bc_herd_services modify   `servtech2` bigint(20) NOT NULL DEFAULT '0' COMMENT '技术员2';
+  alter table bc_herd_services modify   `servtech3` bigint(20) NOT NULL DEFAULT '0' COMMENT '技术员3';
+
+  alter table bc_center_task add  `room_id` bigint(20) DEFAULT NULL COMMENT '房间ID';
+
+--猪精、与配母猪关系表
+  CREATE TABLE `bc_semen_female` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `tenant_id` bigint(20) NOT NULL DEFAULT '0' COMMENT '租户ID',
+  `dr` tinyint(4) NOT NULL DEFAULT '0' COMMENT '删除标识',
+  `create_person` varchar(50) NOT NULL DEFAULT '' COMMENT '创建人',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_person` varchar(50) NOT NULL DEFAULT '' COMMENT '更新人',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `semen_id` bigint(20) NOT NULL  COMMENT '精液ID',
+  `semen_code` varchar(50)  NOT NULL COMMENT '精液编码',
+  `herd_id` bigint(20) DEFAULT NULL COMMENT '猪只档案ID',
+  `fnumber` varchar(50) DEFAULT NULL COMMENT '猪只编码',
+  `identity_id` varchar(50) DEFAULT NULL COMMENT '猪只身份唯一标识',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1186916604592650250 DEFAULT CHARSET=utf8 COMMENT='精液、与配母猪关系表';
+
+
+----1010开发任务
+ alter table bc_center_task_node_mating add `heat_time` datetime DEFAULT NULL COMMENT '发情时间';
+
+--1025开发任务
+alter table bc_center_task_node_female_check add index idx_farmId_taskCenterId_herdId using BTREE(farm_id,task_center_id,herd_id) COMMENT '猪场ID、任务中心ID、猪只生产卡ID,联合索引';
+alter table bc_center_task_node_transloc add index idx_farmId_taskCenterId_herdId using BTREE(farm_id,task_center_id,herd_id) COMMENT '猪场ID、任务中心ID、猪只生产卡ID,联合索引';
+
+update  us_sys_config set `group` = 'pigSex' where `group` = 'sex' and `value` = '母';
+update  us_sys_config set `group` = 'pigSex' where `group` = 'sex' and `value` = '公';
+update  us_sys_config set `group` = 'pigSex' where `group` = 'sex' and `value` = '未确定';
+
+
+--
+drop table bc_center_batch_result;
+CREATE TABLE `bc_center_batch_result` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `tenant_id` bigint(20) DEFAULT NULL COMMENT '租户ID',
+  `dr` tinyint(4) NOT NULL DEFAULT '0' COMMENT '删除标识',
+  `create_person` varchar(50) NOT NULL DEFAULT '' COMMENT '创建人',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_person` varchar(50) NOT NULL DEFAULT '' COMMENT '更新人',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `master_org_id` bigint(20) DEFAULT NULL COMMENT '主组织ID',
+  `farm_id` bigint(20) DEFAULT NULL COMMENT '猪场ID',
+  `batch_filename` varchar(50) NOT NULL DEFAULT '' COMMENT '批量文件名',
+   `file_md5` varchar(50)  NULL DEFAULT '' COMMENT '批量文件md5',
+   `oss_group` varchar(50) NULL DEFAULT '' COMMENT 'oss云存储分组',
+   `result_file_oss_url` varchar(50) NOT NULL DEFAULT '' COMMENT 'oss云存储路径',
+   `error_num` bigint(20) DEFAULT '0' COMMENT '文件执行的错误数量',
+   `start_time` datetime DEFAULT NULL COMMENT '开始执行时间',
+  `end_time` datetime DEFAULT NULL COMMENT '结束时间',
+  `cost` bigint(20) DEFAULT null COMMENT '耗时(秒)',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1186284139822805001 DEFAULT CHARSET=utf8mb4 COMMENT='批量导入执行结果表' dbpartition by hash(`farm_id`);
+
+alter table bc_center_batch_result add index idx_farmId_herdId using BTREE(farm_id,file_md5) COMMENT '猪场ID、批量文件md5,联合索引';
+
+
+--1207 窝信息表增加 窝位置
+alter table bc_herd_litter add beginlitlocation bigint(20) NOT NULL;
